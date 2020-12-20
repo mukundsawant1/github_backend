@@ -43,6 +43,7 @@ public class EventsController {
 	@PostMapping("/events")
 	public ResponseEntity<?> createEvent(@RequestBody Event event){
 		
+		System.out.println("request: "+event);
 		Optional<EventEntity> events=eventRepository.findById(event.getId());
 		
 		if(events.isPresent()) 

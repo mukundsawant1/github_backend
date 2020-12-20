@@ -2,11 +2,10 @@ package com.mukashi.github.entity;
 
 import java.sql.Timestamp;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -16,10 +15,9 @@ public class EventEntity {
 	@Id
     private Long id;
     private String type;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "actor_id", nullable = false)
     private ActorEntity actor;
-    @ManyToOne
-    private RepoEntity repo;
     private Timestamp createdAt;
 
     public EventEntity() {
@@ -63,4 +61,11 @@ public class EventEntity {
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
+
+	@Override
+	public String toString() {
+		return "EventEntity [id=" + id + ", type=" + type + ", actor=" + actor + ", createdAt=" + createdAt + "]";
+	}
+    
+    
 }

@@ -59,4 +59,12 @@ public class Event {
     public void setCreatedAt(Timestamp createdAt) {
         this.created_at = createdAt;
     }
+
+	@Override
+	public String toString() {
+		return "Event [id=" + id + ", type=" + type + ", actor=" + actor + ", repo=" + repo + ", created_at="
+				+ created_at + "]";
+	}
+    
+    
 }

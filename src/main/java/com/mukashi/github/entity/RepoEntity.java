@@ -1,9 +1,11 @@
 package com.mukashi.github.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -14,7 +16,8 @@ public class RepoEntity {
     private Long id;
     private String name;
     private String url;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "actor_id", nullable = false)
     private ActorEntity actor;
     
     public RepoEntity() {
@@ -49,4 +52,10 @@ public class RepoEntity {
     public void setUrl(String url) {
         this.url = url;
     }
+
+	@Override
+	public String toString() {
+		return "RepoEntity [id=" + id + ", name=" + name + ", url=" + url + ", actor=" + actor + "]";
+	}
+    
 }

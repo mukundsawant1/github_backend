@@ -3,7 +3,7 @@ package com.mukashi.github.model;
 public class Actor {
     private Long id;
     private String login;
-    private String avatar;
+    private String avatar_url;
     
     public Actor() {
     }
@@ -11,7 +11,7 @@ public class Actor {
     public Actor(Long id, String login, String avatar) {
         this.id = id;
         this.login = login;
-        this.avatar = avatar;
+        this.avatar_url = avatar;
     }
     
     public Long getId() {
@@ -31,10 +31,16 @@ public class Actor {
     }
     
     public String getAvatar() {
-        return avatar;
+        return avatar_url;
     }
     
     public void setAvatar(String avatar) {
-        this.avatar = avatar;
+        this.avatar_url = avatar;
     }
+
+	@Override
+	public String toString() {
+		return "Actor [id=" + id + ", login=" + login + ", avatar_url=" + avatar_url + "]";
+	}
+    
 }

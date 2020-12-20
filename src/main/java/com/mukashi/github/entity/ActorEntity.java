@@ -4,8 +4,6 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -69,6 +67,12 @@ public class ActorEntity {
 
 	public void setEvent(Set<EventEntity> event) {
 		this.event = event;
+	}
+
+	@Override
+	public String toString() {
+		return "ActorEntity [id=" + id + ", login=" + login + ", avatar=" + avatar + ", repo=" + repo + ", event="
+				+ event + "]";
 	}
     
     
