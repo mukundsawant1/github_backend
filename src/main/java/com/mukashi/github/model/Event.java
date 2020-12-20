@@ -2,11 +2,16 @@ package com.mukashi.github.model;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Event {
     private Long id;
     private String type;
     private Actor actor;
     private Repo repo;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("created_at")
     private Timestamp created_at;
 
     public Event() {

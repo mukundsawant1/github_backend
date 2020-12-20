@@ -1,5 +1,6 @@
 package com.mukashi.github.entity;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -16,9 +17,9 @@ public class ActorEntity {
     private String login;
     private String avatar;
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "actor")
-    private Set<RepoEntity> repo;
+    private Set<RepoEntity> repo= new HashSet<RepoEntity>();
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "actor")
-    private Set<EventEntity> event;
+    private Set<EventEntity> event= new HashSet<EventEntity>();
     
     public ActorEntity() {
     }
