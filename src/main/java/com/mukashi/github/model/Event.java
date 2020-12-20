@@ -1,4 +1,4 @@
-package com.hackerrank.github.model;
+package com.mukashi.github.model;
 
 import java.sql.Timestamp;
 
@@ -7,7 +7,7 @@ public class Event {
     private String type;
     private Actor actor;
     private Repo repo;
-    private Timestamp createdAt;
+    private Timestamp created_at;
 
     public Event() {
     }
@@ -17,7 +17,7 @@ public class Event {
         this.type = type;
         this.actor = actor;
         this.repo = repo;
-        this.createdAt = createdAt;
+        this.created_at = createdAt;
     }
 
     public Long getId() {
@@ -53,10 +53,10 @@ public class Event {
     }
 
     public Timestamp getCreatedAt() {
-        return createdAt;
+        return created_at;
     }
 
     public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
+        this.created_at = createdAt;
     }
 }

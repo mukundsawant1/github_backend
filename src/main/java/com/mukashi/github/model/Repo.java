@@ -1,10 +1,11 @@
-package com.hackerrank.github.model;
+package com.mukashi.github.model;
+
 
 public class Repo {
     private Long id;
     private String name;
     private String url;
-
+    
     public Repo() {
     }
 

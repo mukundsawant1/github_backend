@@ -1,4 +1,4 @@
-package com.hackerrank.github.service;
+package com.mukashi.github.service;
 
 public interface trackerService {
 

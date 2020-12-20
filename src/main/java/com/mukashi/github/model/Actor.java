@@ -1,10 +1,10 @@
-package com.hackerrank.github.model;
+package com.mukashi.github.model;
 
 public class Actor {
     private Long id;
     private String login;
     private String avatar;
-
+    
     public Actor() {
     }
 
